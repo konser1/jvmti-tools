@@ -4,3 +4,8 @@ CLion 2024.2.0.1
 //    Add VM options
 //    -agentpath:$MODULE_DIR$\libfaketime.dll=+600000 -XX:+UnlockDiagnosticVMOptions -XX:DisableIntrinsic=_currentTimeMillis -XX:CompileCommand=dontinline,java.lang.System::currentTimeMillis
  
+public static void main(String[] args) {
+        System.setProperty("faketime.offset.seconds","-600000");
+        Date d = new Date();
+        System.out.println("Start:"+d+", cur="+new Date());
+}
