@@ -23,25 +23,23 @@ static jlong (*real_time_millis)(JNIEnv*, jclass) = NULL;
 static jlong (*real_nano_time_adjustment)(JNIEnv*, jclass, jlong) = NULL;
 static jlong offset_millis = 0;
 
-jlong JNICALL fake_time_millis(JNIEnv* env, jclass cls) {
+static long get_offset(JNIEnv* env) {
     jstring offsetPropertyName = (env)->NewStringUTF("faketime.offset.seconds");
     jstring offsetPropertyDefault = (env)->NewStringUTF("0");
     jclass systemClass = (env)->FindClass("java/lang/System");
     jmethodID getPropertyMethodId = (env)->GetStaticMethodID(systemClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
     jobject offsetValue = (env)->CallStaticObjectMethod(systemClass, getPropertyMethodId, offsetPropertyName,offsetPropertyDefault);
     const char *offset = (env)->GetStringUTFChars((jstring)offsetValue, NULL);
-    offset_millis = (atol)(offset);
+    return atol(offset);
+}
+
+jlong JNICALL fake_time_millis(JNIEnv* env, jclass cls) {
+    offset_millis = get_offset(env);
     return real_time_millis(env, cls) + offset_millis;
 }
 
 jlong JNICALL fake_nano_time_adjustment(JNIEnv* env, jclass cls, jlong offset_seconds) {
-    jstring offsetPropertyName = (env)->NewStringUTF("faketime.offset.seconds");
-    jstring offsetPropertyDefault = (env)->NewStringUTF("0");
-    jclass systemClass = (env)->FindClass("java/lang/System");
-    jmethodID getPropertyMethodId = (env)->GetStaticMethodID(systemClass, "getProperty", "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;");
-    jobject offsetValue = (env)->CallStaticObjectMethod(systemClass, getPropertyMethodId, offsetPropertyName,offsetPropertyDefault);
-    const char *offset = (env)->GetStringUTFChars((jstring)offsetValue, NULL);
-    offset_millis = (atol)(offset);
+    offset_millis = get_offset(env);
     return real_nano_time_adjustment(env, cls, offset_seconds) + offset_millis * 1000000;
 }
 
