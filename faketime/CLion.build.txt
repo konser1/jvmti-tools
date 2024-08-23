@@ -1,4 +1,19 @@
+windows编译方法
+使用mingw
+https://www.mingw-w64.org/
+下载地址
+https://github.com/niXman/mingw-builds-binaries/releases
+# Linux
+    g++ -O2 -fPIC -shared -I $JAVA_HOME/include -I $JAVA_HOME/include/linux -olibfaketime.so faketime.cpp
+# Windows
+    g++ -O2 -shared -I "D:/jdk-11/include" -I "D:/jdk-11/include/win32"  -olibfaketime.dll faketime.cpp
+
+
+编辑器
 CLion 2024.2.0.1
+Visual Studio Code
+https://code.visualstudio.com/docs/cpp/config-mingw
+
 
 
 //    Add VM options
