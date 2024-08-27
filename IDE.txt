@@ -1,0 +1,26 @@
+C++ 开发者有许多集成开发环境（IDE）可以选择，以下是几个常用的 C++ IDE：
+1. Visual Studio
+•  Microsoft 提供的一款强大的跨平台 IDE，支持 Windows 和 macOS（通过 Visual Studio for Mac）。Visual Studio Community 版本对个人开发者和小型团队免费。
+2. CLion
+•  JetBrains 推出的一款专为 C 和 C++ 设计的跨平台 IDE，支持 Windows、macOS 和 Linux。
+3. Code::Blocks
+•  免费且开源的跨平台 IDE，支持 Windows 和 Linux，提供大量的插件扩展功能。
+4. Eclipse
+•  原本为 Java 设计的 IDE，但通过安装特定的插件也可以用于 C 和 C++ 开发。支持 Windows、macOS 和 Linux。
+5. Qt Creator
+•  专为 Qt 库设计的跨平台 IDE，适用于 Windows、macOS 和 Linux。支持 C++ 和 QML。
+6. Xcode
+•  苹果官方提供的 IDE，主要用于 macOS 和 iOS 应用程序开发，支持 C++ 编程。
+7. NetBeans
+•  支持多种编程语言，包括 C 和 C++，支持 Windows、macOS 和 Linux。
+8. Atom
+•  虽然 Atom 是一个文本编辑器，但通过安装额外的插件可以转换成一个功能强大的 IDE。支持 Windows、macOS 和 Linux。
+9. Sublime Text
+•  类似于 Atom，Sublime Text 是一个高度可定制的文本编辑器，可以通过安装插件支持 C++ 的开发。
+10. Visual Studio Code (VS Code)
+•  微软推出的一款轻量级代码编辑器，通过安装 C/C++ 插件可以支持 C++ 的开发，支持 Windows、macOS 和 Linux。
+11. KDevelop
+•  KDE 社区开发的一款面向 KDE 的 IDE，支持 C++，适用于 Linux 和 Unix 系统。
+12. Geany
+•  一款轻量级的 IDE，支持 C++，适用于 Windows、Linux 和 BSD。
+每个 IDE 都有其特点和优势，你可以根据自己的需求和个人喜好来选择合适的 IDE。例如，如果你主要在 Windows 上工作并且需要一个功能齐全的 IDE，Visual Studio 是很好的选择；如果你更倾向于轻量级的编辑器，并且希望有丰富的插件生态系统，那么 VS Code 或 Sublime Text 可能更适合你。
