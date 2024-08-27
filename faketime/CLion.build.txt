@@ -35,7 +35,11 @@ Windows cmd下编译
 
 https://learn.microsoft.com/zh-cn/cpp/build/reference/compiling-a-c-cpp-program?view=msvc-170
 
+方法1
 set LIB="C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\lib\x64";"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64";"C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64"
 cd D:\jvmti-tools-master\jvmti-tools-master\faketime
 "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe" /O2 /LD /I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include" /I "C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I "D:/jdk-11/include" -I "D:/jdk-11/include/win32" faketime.cpp 
 
+
+方法2
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\bin\Hostx64\x64\cl.exe" /O2 /LD /I "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\include" /I "C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt" /I "D:/jdk-11/include" -I "D:/jdk-11/include/win32" faketime.cpp  /LIBPATH "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.35.32215\lib\x64\*.lib" /LIBPATH "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64\*.lib" /LIBPATH "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\ucrt\x64\*.lib"
